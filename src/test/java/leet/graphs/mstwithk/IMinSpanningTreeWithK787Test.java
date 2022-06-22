@@ -3,7 +3,6 @@ package leet.graphs.mstwithk;
 import leet.AbstractTimedTest;
 import leet.Interfaces.IMinSpanningTreeWithK787;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -24,7 +23,7 @@ public class IMinSpanningTreeWithK787Test extends AbstractTimedTest<IMinSpanning
 
 	private static Stream<Arguments> findCheapestPriceSource()
 	{
-		return Stream.of(new MinSpanningTreeWithKBFSOriginal787(), new MinSpanningTreeWithKBFS787(), new MinSpanningTreeWithKDFS787()).flatMap(sol ->
+		return Stream.of(new MinSpanningTreeWithKBFSOriginal(), new MinSpanningTreeWithKBFS(), new MinSpanningTreeWithKDFS()).flatMap(sol ->
 				Stream.of(
 						Arguments.of(100, sol, 2, new int[][]{{0, 1, 100}}, 0), // single flight
 						Arguments.of(500, sol, 4, new int[][]{{0, 1, 100}, {1, 2, 100}, {0, 2, 400}, {2, 3, 100}}, 1), // more expensive path is only option
@@ -45,7 +44,7 @@ public class IMinSpanningTreeWithK787Test extends AbstractTimedTest<IMinSpanning
 	{
 		int numCities = 20;
 		int[][] flights1 = createLoadTestPaths(System.nanoTime(), numCities, 200);
-		IMinSpanningTreeWithK787 sol = new MinSpanningTreeWithKBFS787();
+		IMinSpanningTreeWithK787 sol = new MinSpanningTreeWithKBFS();
 		sol.findCheapestPrice(numCities, flights1, 0, numCities-1, numCities-1);
 	}
 
@@ -62,7 +61,7 @@ public class IMinSpanningTreeWithK787Test extends AbstractTimedTest<IMinSpanning
 		int[][] flights5 = createLoadTestPaths(57389423L, n, numPaths * 2);
 		int[][] flights6 = createLoadTestPaths(574931L, n, numPaths * 2);
 
-		compareRunnableMethods(new MinSpanningTreeWithKBFS787(), new MinSpanningTreeWithKBFSOriginal787(), sol -> {
+		compareRunnableMethods(new MinSpanningTreeWithKBFS(), new MinSpanningTreeWithKBFSOriginal(), sol -> {
 			sol.findCheapestPrice(n, flights1, 0, n - 1, k);
 			sol.findCheapestPrice(n, flights2, 0, n - 1, k);
 			sol.findCheapestPrice(n, flights3, 0, n - 1, k);

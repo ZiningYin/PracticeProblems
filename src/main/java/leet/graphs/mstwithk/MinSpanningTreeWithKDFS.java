@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MinSpanningTreeWithKDFS787 implements IMinSpanningTreeWithK787
+public class MinSpanningTreeWithKDFS implements IMinSpanningTreeWithK787
 {
 	@Override
 	public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k)

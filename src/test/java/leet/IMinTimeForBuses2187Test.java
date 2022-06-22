@@ -6,37 +6,37 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MinTimeForBuses2187Test extends AbstractTimedTest<IMinTimeForBuses2187>
+public class IMinTimeForBuses2187Test extends AbstractTimedTest<IMinTimeForBuses2187>
 {
 	@Test
 	public void MinTimeForBuses()
 	{
-		this.unitTest (new MinTimeForBuses2187());
+		this.unitTest (new MinTimeForBuses());
 	}
 
 	@Test
 	public void MinTimeForBuses_roundingIssue()
 	{
-		this.roundingIssueTest(new MinTimeForBuses2187());
+		this.roundingIssueTest(new MinTimeForBuses());
 	}
 
 	@Test
 	public void MinTimeForBusesOriginal()
 	{
-		this.unitTest(new MinTimeForBusesOriginal2187());
+		this.unitTest(new MinTimeForBusesOriginal());
 	}
 
 	@Test
 	public void MinTimeForBusesOriginal_roundingIssue()
 	{
-		this.roundingIssueTest(new MinTimeForBusesOriginal2187());
+		this.roundingIssueTest(new MinTimeForBusesOriginal());
 	}
 
 	@Disabled
 	@Test
 	public void compareSolutions_roundingIssue()
 	{
-		compareRunnableMethods(new MinTimeForBuses2187(), new MinTimeForBusesOriginal2187(), this::roundingIssueTest);
+		compareRunnableMethods(new MinTimeForBuses(), new MinTimeForBusesOriginal(), this::roundingIssueTest);
 	}
 
 

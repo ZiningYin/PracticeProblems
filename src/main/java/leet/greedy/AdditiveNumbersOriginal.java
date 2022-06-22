@@ -2,7 +2,7 @@ package leet.greedy;
 
 import leet.Interfaces.IAdditiveNumbers304;
 
-public class AdditiveNumbersOriginal304 implements IAdditiveNumbers304
+public class AdditiveNumbersOriginal implements IAdditiveNumbers304
 {
 	@Override
 	public boolean isAdditiveNumber(String num)

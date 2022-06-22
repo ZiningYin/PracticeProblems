@@ -4,7 +4,7 @@ import leet.Interfaces.IMaxProfit1648;
 
 import java.util.Arrays;
 
-class MaxProfit1648 implements IMaxProfit1648
+class MaxProfit implements IMaxProfit1648
 {
 	private final static int MOD_VAL = 1000000007;
 

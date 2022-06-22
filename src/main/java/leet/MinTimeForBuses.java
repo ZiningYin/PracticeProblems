@@ -2,7 +2,7 @@ package leet;
 
 import leet.Interfaces.IMinTimeForBuses2187;
 
-public class MinTimeForBuses2187 implements IMinTimeForBuses2187
+public class MinTimeForBuses implements IMinTimeForBuses2187
 {
 	@Override
 	public long minimumTime(int[] time, int totalTrips)

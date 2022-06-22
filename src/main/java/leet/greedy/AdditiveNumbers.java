@@ -2,7 +2,7 @@ package leet.greedy;
 
 import leet.Interfaces.IAdditiveNumbers304;
 
-public class AdditiveNumbers304 implements IAdditiveNumbers304
+public class AdditiveNumbers implements IAdditiveNumbers304
 {
 	private long innerLoopTime = 0;
 	@Override

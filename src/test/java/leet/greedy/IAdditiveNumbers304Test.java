@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AdditiveNumbers304Test extends AbstractTimedTest<IAdditiveNumbers304>
+public class IAdditiveNumbers304Test extends AbstractTimedTest<IAdditiveNumbers304>
 {
 	//todo make this a parameterized test
 	@Test
 	public void isAdditiveNumber_AdditiveNumbers()
 	{
-		AdditiveNumbers304 sol = new AdditiveNumbers304();
+		AdditiveNumbers sol = new AdditiveNumbers();
 		isAdditiveNumber(sol);
 		sol.setInnerLoopTime(0L);
 		long start = System.nanoTime();
@@ -26,7 +26,7 @@ public class AdditiveNumbers304Test extends AbstractTimedTest<IAdditiveNumbers30
 	@Test
 	public void isAdditiveNumber_ZeroHandling_AdditiveNumbers()
 	{
-		this.isAdditiveNumber_ZeroHandling(new AdditiveNumbers304());
+		this.isAdditiveNumber_ZeroHandling(new AdditiveNumbers());
 	}
 
 	public void isAdditiveNumber(IAdditiveNumbers304 solution)

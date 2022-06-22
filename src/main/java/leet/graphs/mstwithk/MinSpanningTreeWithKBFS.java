@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 // no improvements made
-public class MinSpanningTreeWithKBFS787 implements IMinSpanningTreeWithK787
+public class MinSpanningTreeWithKBFS implements IMinSpanningTreeWithK787
 {
 	@Override
 	public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k)

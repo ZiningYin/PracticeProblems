@@ -2,12 +2,10 @@ package leet.graphs.mstwithk;
 
 import leet.Interfaces.IMinSpanningTreeWithK787;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class MinSpanningTreeWithKNotMineA787 implements IMinSpanningTreeWithK787
+public class MinSpanningTreeWithKPublic implements IMinSpanningTreeWithK787
 {
 	public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
 

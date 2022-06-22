@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class MinSpanningTreeWithKBFSOriginal787 implements IMinSpanningTreeWithK787
+public class MinSpanningTreeWithKBFSOriginal implements IMinSpanningTreeWithK787
 {
 	@Override
 	public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k)

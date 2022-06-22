@@ -5,12 +5,12 @@ import leet.Interfaces.IRemoveKDigits402;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 
-public class RemoveKDigits402Test extends AbstractTimedTest<IRemoveKDigits402>
+public class IRemoveKDigits402Test extends AbstractTimedTest<IRemoveKDigits402>
 {
 	@RepeatedTest(10)
 	public void RemoveKDigits402()
 	{
-		timeRunnableMethod(new RemoveKDigits402(), this::unitTest);
+		timeRunnableMethod(new RemoveKDigits(), this::unitTest);
 	}
 
 	protected void unitTest(IRemoveKDigits402 solution)
