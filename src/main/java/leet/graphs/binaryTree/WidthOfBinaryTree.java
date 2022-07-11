@@ -1,6 +1,7 @@
 package leet.graphs.binaryTree;
 
 import leet.Interfaces.IWidthOfBinaryTree662;
+import leet.datastruct.TreeNode;
 
 import java.util.LinkedList;
 

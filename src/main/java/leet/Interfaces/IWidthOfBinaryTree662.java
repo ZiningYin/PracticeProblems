@@ -1,6 +1,6 @@
 package leet.Interfaces;
 
-import leet.graphs.binaryTree.TreeNode;
+import leet.datastruct.TreeNode;
 
 public interface IWidthOfBinaryTree662
 {

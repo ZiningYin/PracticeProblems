@@ -44,7 +44,7 @@ public class IValidateBinaryTreeNodes1361Test extends AbstractTimedTest<IValidat
 
 	public void loadTest(IValidateBinaryTreeNodes1361 solution, int[] leftChildren, int[] rightChildren)
 	{
-		solution.validateBinaryTreeNodes(leftChildren.length,leftChildren, rightChildren);
+		solution.validateBinaryTreeNodes(leftChildren.length, leftChildren, rightChildren);
 	}
 
 	@Test

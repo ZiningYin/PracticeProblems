@@ -1,5 +1,7 @@
 package leet.graphs.binaryTree;
 
+import leet.datastruct.TreeNode;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;

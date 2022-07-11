@@ -16,46 +16,46 @@ public abstract class AbstractTimedTest<T>
 
 	public void compareRunnableMethods(T solution, T solution2, Consumer<T> testMethod)
 	{
-		long averageRuntimeFor1 = 0;
-		long averageRuntimeFor2 = 0;
+		long totalRuntimeFor1 = getRuntime(solution, testMethod, 5);
+		long totalRuntimeFor2 = getRuntime(solution2, testMethod, 5);
+		totalRuntimeFor1 += getRuntime(solution, testMethod, 5);
+		totalRuntimeFor2 += getRuntime(solution2, testMethod, 5);
 
-		// dry run for initializing entities
-		for (int i = 0; i < 10; i++)
-		{
-			testMethod.accept(solution);
-			testMethod.accept(solution2);
-		}
+		totalRuntimeFor1 /= 10;
+		totalRuntimeFor2 /= 10;
 
-		for (int i = 0; i < 10; i++)
-		{
-			long start = System.nanoTime();
-			testMethod.accept(solution);
-			averageRuntimeFor1 += System.nanoTime() - start;
-
-			start = System.nanoTime();
-			testMethod.accept(solution2);
-			averageRuntimeFor2 += System.nanoTime() - start;
-		}
-
-		averageRuntimeFor1 /= 10;
-		averageRuntimeFor2 /= 10;
-
-		String sb = "Average runtime for " + solution.getClass().getSimpleName() + " is " + averageRuntimeFor1 + "ns.\n" +
-				"Average runtime for " + solution2.getClass().getSimpleName() + " is " + averageRuntimeFor2 + "ns.\n" +
-				solution.getClass().getSimpleName() + " is faster by " + (averageRuntimeFor2 - averageRuntimeFor1) + "ns.\n";
+		String sb = "Average runtime for " + solution.getClass().getSimpleName() + " is " + totalRuntimeFor1 + "ns.\n" +
+				"Average runtime for " + solution2.getClass().getSimpleName() + " is " + totalRuntimeFor2 + "ns.\n" +
+				solution.getClass().getSimpleName() + " is faster by " + (totalRuntimeFor2 - totalRuntimeFor1) + "ns.\n";
 		System.out.println(sb);
 	}
 
-	private long getAverageRuntime(Runnable testMethod, int numIterations)
+	private long getRuntime(T solution, Consumer<T> testMethod, int numRuns)
 	{
-		// dry run for initializing entities
-		testMethod.run();
-
-		long start = System.nanoTime();
-		for (int i = 0; i < numIterations; i++)
+		long totalRuntime = 0;
+		for (int i = 0; i < 5; i++)
 		{
-			testMethod.run();
+			precomputeForPerfTest();
+			testMethod.accept(solution);
+			clear();
 		}
-		return (System.nanoTime() - start) / numIterations;
+
+		for (int i = 0; i < numRuns; i++)
+		{
+			precomputeForPerfTest();
+			long start = System.nanoTime();
+			testMethod.accept(solution);
+			totalRuntime += System.nanoTime() - start;
+			clear();
+		}
+		return totalRuntime;
+	}
+
+	protected void precomputeForPerfTest()
+	{
+	}
+
+	protected void clear()
+	{
 	}
 }
