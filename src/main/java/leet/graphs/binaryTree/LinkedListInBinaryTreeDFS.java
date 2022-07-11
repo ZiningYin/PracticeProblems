@@ -56,7 +56,6 @@ public class LinkedListInBinaryTreeDFS implements ILinkedListInBinaryTree1367
 		if (treeNode == null) return false;
 		if (listNode.val != treeNode.val) return false;
 
-		if (checkNode(listNode.next, treeNode.left)) return true;
-		return checkNode(listNode.next, treeNode.right);
+		return checkNode(listNode.next, treeNode.left) || checkNode(listNode.next, treeNode.right);
 	}
 }
