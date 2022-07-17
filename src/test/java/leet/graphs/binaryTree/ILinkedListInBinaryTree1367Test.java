@@ -16,7 +16,6 @@ public class ILinkedListInBinaryTree1367Test extends AbstractTimedTest<ILinkedLi
 	private ListNode head1 = null;
 	private ListNode head2 = null;
 	private ListNode head3 = null;
-	private boolean isPrecomputeDone = false;
 
 	@Test
 	public void testCorrectness_Original()
@@ -70,7 +69,7 @@ public class ILinkedListInBinaryTree1367Test extends AbstractTimedTest<ILinkedLi
 	@Override
 	protected void precomputeForPerfTest()
 	{
-		if (this.isPrecomputeDone) fail("Precomputed values was not cleared");
+		super.precomputeForPerfTest();
 		int [] arrNodes1 = new int[2047];
 		for (int i =1023; i < 2046; i++)
 		{
@@ -96,20 +95,18 @@ public class ILinkedListInBinaryTree1367Test extends AbstractTimedTest<ILinkedLi
 		this.head2 = createListFromArray(0,0,0,0,0,0);
 		this.head3 = createListFromArray(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
 
-		this.isPrecomputeDone = true;
 	}
 
 	@Override
 	protected void clear()
 	{
-		if (!this.isPrecomputeDone) fail("There are no precomputed values");
+		super.clear();
 		this.root1 = null;
 		this.root2 = null;
 		this.root3 = null;
 		this.head1 = null;
 		this.head2 = null;
 		this.head3 = null;
-		this.isPrecomputeDone = false;
 	}
 
 	private ListNode createListFromArray(int... values)

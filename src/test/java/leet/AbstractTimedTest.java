@@ -2,8 +2,12 @@ package leet;
 
 import java.util.function.Consumer;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 public abstract class AbstractTimedTest<T>
 {
+	protected boolean isPrecomputeDone = false;
+
 	public void timeRunnableMethod(T solution, Consumer<T> testMethod)
 	{
 		// dry run for initializing entities
@@ -53,9 +57,13 @@ public abstract class AbstractTimedTest<T>
 
 	protected void precomputeForPerfTest()
 	{
+		if (this.isPrecomputeDone) fail("Precomputed values was not cleared");
+		this.isPrecomputeDone = true;
 	}
 
 	protected void clear()
 	{
+		if (!this.isPrecomputeDone) fail("There are no precomputed values");
+		this.isPrecomputeDone = false;
 	}
 }
