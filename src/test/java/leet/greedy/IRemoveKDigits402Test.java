@@ -10,7 +10,7 @@ public class IRemoveKDigits402Test extends AbstractTimedTest<IRemoveKDigits402>
 	@RepeatedTest(10)
 	public void RemoveKDigits402()
 	{
-		timeRunnableMethod(new RemoveKDigits(), this::unitTest);
+		timeRunnableMethod(new RemoveKDigitsOriginal(), this::unitTest);
 	}
 
 	protected void unitTest(IRemoveKDigits402 solution)

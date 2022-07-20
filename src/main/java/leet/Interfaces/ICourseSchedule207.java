@@ -1,6 +1,6 @@
 package leet.Interfaces;
 
-public interface ICourseSchedule
+public interface ICourseSchedule207
 {
 	public boolean canFinish(int numCourses, int[][] prerequisites);
 }

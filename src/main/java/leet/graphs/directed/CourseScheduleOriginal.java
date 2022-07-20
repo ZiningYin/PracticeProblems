@@ -1,11 +1,12 @@
 package leet.graphs.directed;
 
-import leet.Interfaces.ICourseSchedule;
+import leet.Interfaces.ICourseSchedule207;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class CourseScheduleOriginal implements ICourseSchedule
+//todo implement better solution and check against others
+public class CourseScheduleOriginal implements ICourseSchedule207
 {
 	// cycles on the starting node, cycles on a later node, sharded dependencies between nodes
 	// no real edge cases

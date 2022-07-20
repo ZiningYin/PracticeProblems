@@ -2,7 +2,7 @@ package leet.greedy;
 
 import leet.Interfaces.IRemoveKDigits402;
 
-public class RemoveKDigits implements IRemoveKDigits402
+public class RemoveKDigitsOriginal implements IRemoveKDigits402
 {
 
 	@Override

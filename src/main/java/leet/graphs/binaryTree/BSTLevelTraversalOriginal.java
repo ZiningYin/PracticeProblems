@@ -1,6 +1,6 @@
 package leet.graphs.binaryTree;
 
-import leet.Interfaces.IBSTLevelTraversal;
+import leet.Interfaces.IBSTLevelTraversal102;
 import leet.datastruct.TreeNode;
 
 import java.util.ArrayList;
@@ -8,7 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BSTLevelTraversal implements IBSTLevelTraversal
+// No unit tests because this problem is trivial
+public class BSTLevelTraversalOriginal implements IBSTLevelTraversal102
 {
 	@Override
 	public List<List<Integer>> levelOrder(TreeNode root) {
